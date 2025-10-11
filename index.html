@@ -95,47 +95,7 @@ body.dark-mode footer {
   color: #ffd700;
   border-top: 5px solid #393e46;
 }
-    .dark-toggle-btn {
-  padding: 0 18px;
-  height: 42px;
-  border-radius: 21px; /* setengah dari height untuk bulat sempurna */
-  border: none;
-  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 17px;
-  box-shadow: 0 3px 12px rgba(0,128,255,0.12);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
-  transition: background 0.4s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-  outline: none;
-  border: 2px solid transparent;
-}
-
-.dark-toggle-btn:hover, .dark-toggle-btn:focus {
-  background: linear-gradient(90deg, #ffdd57 0%, #ffbb00 100%);
-  color: #222;
-  box-shadow: 0 6px 20px rgba(255,221,87,0.12);
-  transform: scale(1.05);
-  border-color: #ffdd57;
-}
-
-body.dark-mode .dark-toggle-btn {
-  background: linear-gradient(90deg, #23272f 0%, #393e46 100%);
-  color: #ffd700;
-  border-color: transparent;
-}
-
-body.dark-mode .dark-toggle-btn:hover,
-body.dark-mode .dark-toggle-btn:focus {
-  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
-  color: #fff;
-  border-color: #0077ff;
-}
-#darkIcon {
+    #darkIcon {
   font-size: 21px;
   transition: transform 0.35s;
 }
@@ -147,14 +107,13 @@ body.dark-mode #darkIcon {
 <body>
   <header>
     <h1>Adenovirus</h1>
-    <nav style="display:flex; align-items:center; gap:20px;">
+    <nav>
   <a href="#materi">Materi</a>
   <a href="#kesimpulan">Kesimpulan</a>
     </nav>
-  <button id="darkModeToggle" class="dark-toggle-btn" style="margin-left:20px;">
-      <span id="darkIcon">🌙</span>
-      <span id="darkLabel">Mode Gelap</span>
-    </button>
+  <button id="darkModeToggle" style="margin-left:20px; padding:6px 16px; border-radius:8px; border:none; background:#222; color:#fff; cursor:pointer; font-weight:500;">
+  🌙 Mode Gelap
+</button>
   </header>
 
   <section id="materi">
@@ -270,28 +229,28 @@ body.dark-mode #darkIcon {
 
   <!-- button toggle -->
   <script>
-const toggleBtn = document.getElementById('darkModeToggle');
-const iconSpan = document.getElementById('darkIcon');
-function setDarkMode(isDark) {
-  if(isDark){
-    document.body.classList.add('dark-mode');
-    iconSpan.textContent = '🌞';
-    toggleBtn.lastChild.textContent = ' Mode Terang';
-  } else {
-    document.body.classList.remove('dark-mode');
-    iconSpan.textContent = '🌙';
-    toggleBtn.lastChild.textContent = ' Mode Gelap';
-  }
-  localStorage.setItem('isDarkMode', isDark ? 'true' : 'false');
-}
-toggleBtn.addEventListener('click', function() {
-  const isDark = !document.body.classList.contains('dark-mode');
-  setDarkMode(isDark);
-});
-window.addEventListener('DOMContentLoaded', function() {
-  const isDark = localStorage.getItem('isDarkMode') === 'true';
-  setDarkMode(isDark);
-});
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const iconSpan = document.getElementById('darkIcon');
+    function setDarkMode(isDark) {
+      if(isDark){
+        document.body.classList.add('dark-mode');
+        iconSpan.textContent = '🌞';
+        toggleBtn.lastChild.textContent = ' Mode Terang';
+      } else {
+        document.body.classList.remove('dark-mode');
+        iconSpan.textContent = '🌙';
+        toggleBtn.lastChild.textContent = ' Mode Gelap';
+      }
+      localStorage.setItem('isDarkMode', isDark ? 'true' : 'false');
+    }
+    toggleBtn.addEventListener('click', function() {
+      const isDark = !document.body.classList.contains('dark-mode');
+      setDarkMode(isDark);
+    });
+    window.addEventListener('DOMContentLoaded', function() {
+      const isDark = localStorage.getItem('isDarkMode') === 'true';
+      setDarkMode(isDark);
+    });
   </script>
 </body>
 </html>
