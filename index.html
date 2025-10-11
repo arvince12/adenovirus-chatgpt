@@ -104,9 +104,9 @@ body.dark-mode footer {
       <a href="#materi">Materi</a>
       <a href="#kesimpulan">Kesimpulan</a>
     </nav>
-    <button id="darkModeToggle" class="dark-toggle-btn">
-  <span id="darkIcon">🌙</span> Mode Gelap
-</button>
+    <button id="darkModeToggle" style="margin-left:20px; padding:6px 16px; border-radius:8px; border:none; background:#222; color:#fff; cursor:pointer; font-weight:500;">
+  🌙 Mode Gelap
+    </button>
   </header>
 
   <section id="materi">
@@ -223,19 +223,19 @@ body.dark-mode footer {
   <!-- button toggle -->
   <script>
   const toggleBtn = document.getElementById('darkModeToggle');
-const iconSpan = document.getElementById('darkIcon');
-toggleBtn.addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
-  if(document.body.classList.contains('dark-mode')){
-    toggleBtn.textContent = '';
-    iconSpan.textContent = '🌞';
-    toggleBtn.append(iconSpan, document.createTextNode(' Mode Terang'));
-  } else {
-    toggleBtn.textContent = '';
-    iconSpan.textContent = '🌙';
-    toggleBtn.append(iconSpan, document.createTextNode(' Mode Gelap'));
-  }
-});
-  </script>
+  toggleBtn.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    // Ganti teks tombol sesuai mode
+    if(document.body.classList.contains('dark-mode')){
+      toggleBtn.textContent = '🌞 Mode Terang';
+      toggleBtn.style.background = '#ffd700';
+      toggleBtn.style.color = '#222';
+    } else {
+      toggleBtn.textContent = '🌙 Mode Gelap';
+      toggleBtn.style.background = '#222';
+      toggleBtn.style.color = '#fff';
+    }
+  });
+        </script>
 </body>
 </html>
