@@ -56,35 +56,10 @@
     footer { text-align: center; padding: 20px; background-color: #333; color: #fff; margin-top: 40px; border-top: 5px solid #0077ff; }
 
     /* Dark Mode */
-    .dark-toggle-btn {
-  padding: 8px 22px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 17px;
-  box-shadow: 0 3px 12px rgba(0,128,255,0.15);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.4s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-}
-.dark-toggle-btn:hover {
-  background: linear-gradient(90deg, #ffdd57 0%, #ffbb00 100%);
-  color: #222;
-  box-shadow: 0 6px 20px rgba(255,221,87,0.15);
-  transform: scale(1.05) rotate(-2deg);
-}
-body.dark-mode .dark-toggle-btn {
-  background: linear-gradient(90deg, #23272f 0%, #393e46 100%);
+    body.dark-mode {
+  background-color: #23272f;
   color: #ffd700;
-}
-body.dark-mode .dark-toggle-btn:hover {
-  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
-  color: #fff;
-}
+    }
   </style>
 </head>
 <body>
