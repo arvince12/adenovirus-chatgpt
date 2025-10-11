@@ -56,44 +56,34 @@
     footer { text-align: center; padding: 20px; background-color: #333; color: #fff; margin-top: 40px; border-top: 5px solid #0077ff; }
 
     /* Dark Mode */
-    body.dark-mode {
-  background-color: #181b20;
-  color: #e4e4e4;
-}
-
-body.dark-mode header {
-  background: linear-gradient(90deg, #222f3e, #393e46);
+    .dark-toggle-btn {
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
   color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  box-shadow: 0 3px 12px rgba(0,128,255,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.4s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
-
-body.dark-mode .materi-item {
-  background-color: #23272f;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+.dark-toggle-btn:hover {
+  background: linear-gradient(90deg, #ffdd57 0%, #ffbb00 100%);
+  color: #222;
+  box-shadow: 0 6px 20px rgba(255,221,87,0.15);
+  transform: scale(1.05) rotate(-2deg);
 }
-
-body.dark-mode .materi-item h3 {
-  color: #66d9ef;
-}
-
-body.dark-mode .materi-item h4 {
-  color: #ffdd57;
-}
-
-body.dark-mode .materi-item img {
-  box-shadow: 0 8px 20px rgba(60,60,90,0.3);
-  filter: brightness(0.95) contrast(1.08);
-}
-
-body.dark-mode .info-box {
-  background: #2c2c2c;
-  border-left: 5px solid #ffaa00;
+body.dark-mode .dark-toggle-btn {
+  background: linear-gradient(90deg, #23272f 0%, #393e46 100%);
   color: #ffd700;
 }
-
-body.dark-mode footer {
-  background-color: #101218;
-  color: #ffd700;
-  border-top: 5px solid #393e46;
+body.dark-mode .dark-toggle-btn:hover {
+  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
+  color: #fff;
 }
   </style>
 </head>
@@ -106,7 +96,7 @@ body.dark-mode footer {
     </nav>
     <button id="darkModeToggle" class="dark-toggle-btn">
   <span id="darkIcon">🌙</span> Mode Gelap
-    </button>
+</button>
   </header>
 
   <section id="materi">
@@ -223,19 +213,19 @@ body.dark-mode footer {
   <!-- JS Toggle Dark Mode -->
   <script>
   const toggleBtn = document.getElementById('darkModeToggle');
-  toggleBtn.addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-    // Ganti teks tombol sesuai mode
-    if(document.body.classList.contains('dark-mode')){
-      toggleBtn.textContent = '🌞 Mode Terang';
-      toggleBtn.style.background = '#ffd700';
-      toggleBtn.style.color = '#222';
-    } else {
-      toggleBtn.textContent = '🌙 Mode Gelap';
-      toggleBtn.style.background = '#222';
-      toggleBtn.style.color = '#fff';
-    }
-  });
+const iconSpan = document.getElementById('darkIcon');
+toggleBtn.addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode');
+  if(document.body.classList.contains('dark-mode')){
+    toggleBtn.textContent = '';
+    iconSpan.textContent = '🌞';
+    toggleBtn.append(iconSpan, document.createTextNode(' Mode Terang'));
+  } else {
+    toggleBtn.textContent = '';
+    iconSpan.textContent = '🌙';
+    toggleBtn.append(iconSpan, document.createTextNode(' Mode Gelap'));
+  }
+});
   </script>
 </body>
 </html>
