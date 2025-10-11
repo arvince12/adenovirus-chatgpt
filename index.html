@@ -98,14 +98,14 @@ body.dark-mode footer {
     .dark-toggle-btn {
   padding: 10px 28px;
   border-radius: 999px;
-  border: none;
+  border: 2px solid transparent;
   background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
   color: #fff;
   cursor: pointer;
   font-weight: 700;
   font-size: 18px;
   box-shadow: 0 3px 12px rgba(0,128,255,0.18);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   letter-spacing: 0.5px;
@@ -113,27 +113,33 @@ body.dark-mode footer {
     background 0.5s,
     color 0.3s,
     box-shadow 0.3s,
-    transform 0.3s;
+    transform 0.3s,
+    border-color 0.3s;
   outline: none;
-  border: 2px solid transparent;
+  margin-left: 20px; /* jarak dari nav/link lain */
 }
+
 .dark-toggle-btn:hover, .dark-toggle-btn:focus {
   background: linear-gradient(90deg, #ffdd57 0%, #ffbb00 100%);
   color: #222;
   box-shadow: 0 6px 20px rgba(255,221,87,0.19);
   transform: scale(1.07) rotate(-2deg);
-  border: 2px solid #ffdd57;
+  border-color: #ffdd57;
 }
+
+/* Untuk mode gelap */
 body.dark-mode .dark-toggle-btn {
   background: linear-gradient(90deg, #23272f 0%, #393e46 100%);
   color: #ffd700;
+  border-color: transparent;
 }
-body.dark-mode .dark-toggle-btn:hover, body.dark-mode .dark-toggle-btn:focus {
+body.dark-mode .dark-toggle-btn:hover,
+body.dark-mode .dark-toggle-btn:focus {
   background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
   color: #fff;
-  border: 2px solid #0077ff;
+  border-color: #0077ff;
 }
-    #darkIcon {
+#darkIcon {
   font-size: 21px;
   transition: transform 0.35s;
 }
@@ -145,13 +151,13 @@ body.dark-mode #darkIcon {
 <body>
   <header>
     <h1>Adenovirus</h1>
-    <nav>
-      <a href="#materi">Materi</a>
-      <a href="#kesimpulan">Kesimpulan</a>
+    <nav style="display:flex; align-items:center; gap:20px;">
+  <a href="#materi">Materi</a>
+  <a href="#kesimpulan">Kesimpulan</a>
+  <button id="darkModeToggle" class="dark-toggle-btn">
+    <span id="darkIcon">🌙</span> Mode Gelap
+  </button>
     </nav>
-    <button id="darkModeToggle" class="dark-toggle-btn">
-  <span id="darkIcon">🌙</span> Mode Gelap
-</button>
   </header>
 
   <section id="materi">
