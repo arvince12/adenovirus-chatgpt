@@ -104,9 +104,8 @@ body.dark-mode footer {
       <a href="#materi">Materi</a>
       <a href="#kesimpulan">Kesimpulan</a>
     </nav>
-    <button id="darkModeToggle" style="margin-left:20px; padding:6px 16px; border-radius:8px; border:none; background:#222; color:#fff; cursor:pointer; font-weight:500;">
-  🌙 Mode Gelap
-    </button>
+    <button id="darkModeToggle" class="dark-toggle-btn">
+    <span id="darkIcon">🌙</span> Mode Gelap </button>
   </header>
 
   <section id="materi">
@@ -223,34 +222,27 @@ body.dark-mode footer {
   <!-- button toggle -->
   <script>
 const toggleBtn = document.getElementById('darkModeToggle');
-const iconSpan = document.getElementById('darkIcon');
-
-// Fungsi untuk set mode gelap/terang
-function setDarkMode(isDark) {
-  if(isDark){
-    document.body.classList.add('dark-mode');
-    iconSpan.textContent = '🌞';
-    toggleBtn.lastChild.textContent = ' Mode Terang';
-  } else {
-    document.body.classList.remove('dark-mode');
-    iconSpan.textContent = '🌙';
-    toggleBtn.lastChild.textContent = ' Mode Gelap';
-  }
-  // Simpan preferensi ke localStorage
-  localStorage.setItem('isDarkMode', isDark ? 'true' : 'false');
-}
-
-// Saat tombol diklik
-toggleBtn.addEventListener('click', function() {
-  const isDark = !document.body.classList.contains('dark-mode');
-  setDarkMode(isDark);
-});
-
-// Saat halaman dimuat, cek preferensi dari localStorage
-window.addEventListener('DOMContentLoaded', function() {
-  const isDark = localStorage.getItem('isDarkMode') === 'true';
-  setDarkMode(isDark);
-});
+    const iconSpan = document.getElementById('darkIcon');
+    function setDarkMode(isDark) {
+      if(isDark){
+        document.body.classList.add('dark-mode');
+        iconSpan.textContent = '🌞';
+        toggleBtn.lastChild.textContent = ' Mode Terang';
+      } else {
+        document.body.classList.remove('dark-mode');
+        iconSpan.textContent = '🌙';
+        toggleBtn.lastChild.textContent = ' Mode Gelap';
+      }
+      localStorage.setItem('isDarkMode', isDark ? 'true' : 'false');
+    }
+    toggleBtn.addEventListener('click', function() {
+      const isDark = !document.body.classList.contains('dark-mode');
+      setDarkMode(isDark);
+    });
+    window.addEventListener('DOMContentLoaded', function() {
+      const isDark = localStorage.getItem('isDarkMode') === 'true';
+      setDarkMode(isDark);
+    });
   </script>
 </body>
 </html>
