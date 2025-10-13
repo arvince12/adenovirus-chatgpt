@@ -258,6 +258,270 @@ body.dark-mode footer {
   </section>
 
   <footer>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penjelasan Adenovirus</title>
+  <style>
+    /* Reset dasar */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { line-height: 1.6; background-color: #f5f7fa; color: #333; padding-top: 80px; }
+
+    /* Header sticky + gradient */
+    header {
+      position: sticky; top: 0;
+      background: linear-gradient(90deg, #0077ff, #00c6ff);
+      color: white; padding: 15px 25px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.5s ease;
+    }
+    header:hover { background: linear-gradient(90deg, #00c6ff, #0077ff); }
+    header h1 { font-size: 24px; }
+    header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: all 0.3s ease; }
+    header nav a:hover { color: #ffdd57; transform: scale(1.1); }
+
+    /* Section & artikel */
+    section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .materi-item {
+      padding: 20px; margin-bottom: 30px; border-radius: 10px;
+      background-color: #fff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+      opacity: 0; transform: translateY(20px); box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .materi-item.visible { opacity: 1; transform: translateY(0); }
+
+    .materi-item h3 { margin-bottom: 10px; color: #0077ff; }
+    .materi-item h4 { margin-top: 15px; color: #00aaff; }
+
+    /* Gambar responsive + zoom */
+    .materi-item img {
+      width: 100%; max-width: 600px; display: block; margin: 15px auto;
+      border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .materi-item img:hover { transform: scale(1.08) rotate(1deg); filter: brightness(1.15); }
+    figcaption { text-align: center; font-size: 14px; color: #555; margin-top: 5px; }
+
+    /* Info box interaktif */
+    .info-box {
+      background: #fffbcc; border-left: 5px solid #ffcc00; padding: 12px 18px;
+      margin: 15px 0; border-radius: 10px; transition: all 0.3s ease;
+    }
+    .info-box:hover { background: #fff1b8; border-color: #ffaa00; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background-color: #333; color: #fff; margin-top: 40px; border-top: 5px solid #0077ff; }
+    /* Line */
+.materi-item h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #0077ff;
+  padding-bottom: 6px;
+  overflow: hidden;
+}
+
+.materi-item h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  border-radius: 2px;
+  transition: width 0.7s ease;
+}
+
+.materi-item h3.show::after {
+  width: 100%;
+}
+
+/* dark mode */
+body.dark-mode .materi-item h3::after {
+  background: linear-gradient(90deg, #66d9ef, #ffdd57);
+}
+
+/* dark mode */
+body.dark-mode .materi-item h3::after {
+  background: linear-gradient(90deg, #66d9ef, #ffdd57);
+}
+
+/* versi dark mode */
+body.dark-mode .materi-item h3::after {
+  background: linear-gradient(90deg, #66d9ef, #ffdd57);
+}
+
+    /* Dark Mode */
+    body.dark-mode {
+  background-color: #181b20;
+  color: #e4e4e4;
+}
+
+body.dark-mode header {
+  background: linear-gradient(90deg, #222f3e, #393e46);
+  color: #fff;
+}
+
+body.dark-mode .materi-item {
+  background-color: #23272f;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .materi-item h3 {
+  color: #66d9ef;
+}
+
+body.dark-mode .materi-item h4 {
+  color: #ffdd57;
+}
+
+body.dark-mode .materi-item img {
+  box-shadow: 0 8px 20px rgba(60,60,90,0.3);
+  filter: brightness(0.95) contrast(1.08);
+}
+
+body.dark-mode .info-box {
+  background: #2c2c2c;
+  border-left: 5px solid #ffaa00;
+  color: #ffd700;
+}
+
+body.dark-mode footer {
+  background-color: #101218;
+  color: #ffd700;
+  border-top: 5px solid #393e46;
+}
+    .dark-toggle-btn {
+  background: #ffffff;
+  color: #0077ff;
+  border: none;
+  border-radius: 50px; /* ini yang bikin membulat */
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.dark-toggle-btn:hover {
+  background: #0077ff;
+  color: #fff;
+  transform: scale(1.05);
+}
+    /* agar lebih halus */
+body, header, .materi-item, footer {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Adenovirus</h1>
+    <nav>
+  <a href="#materi">Materi</a>
+  <a href="#kesimpulan">Kesimpulan</a>
+    </nav>
+  <button id="darkModeToggle" class="dark-toggle-btn">
+    <span id="darkIcon">🌙</span> Mode Gelap
+  </button>
+  </header>
+
+  <section id="materi">
+    <!-- Pengertian Adenovirus -->
+    <article class="materi-item">
+      <h3>Pengertian Adenovirus</h3>
+      <p>Adenovirus adalah jenis virus yang menyebabkan infeksi pada saluran pernapasan, pencernaan, dan paru-paru. Virus ini dapat menyerang siapa saja, tetapi lebih sering menyerang anak-anak.</p>
+      <p>Adenovirus memiliki kemampuan unik untuk menginfeksi berbagai jaringan dalam tubuh manusia. Virus ini menyebabkan berbagai gejala mulai dari infeksi ringan hingga penyakit serius pada individu dengan sistem kekebalan yang melemah.</p>
+      <figure>
+        <img src="137368345fbb205f6a1226f19a2f0223.jpg" alt="Adenovirus">
+        <figcaption>Gambar 1. Contoh Virus (Adenovirus).</figcaption>
+      </figure>
+    </article>
+
+    <!-- Struktur dan Fungsi Adenovirus -->
+    <article class="materi-item">
+      <h3>Struktur dan Fungsi Adenovirus</h3>
+      <p><strong>1. Hekson (Hexon):</strong> Protein struktural utama yang menyusun 20 sisi kapsid.</p>
+      <p><strong>2. Penton Base (Dasar Penton):</strong> Unit protein di 12 sudut kapsid, berperan penting dalam perlekatan virus ke sel inang.</p>
+      <p><strong>3. Fiber (Serat):</strong> Proyeksi ramping seperti jarum dari setiap penton base, membantu virus menempel ke sel target.</p>
+      <p><strong>4. Knob Domain (Domain Kenop):</strong> Bagian ujung protein fiber yang menyerupai kenop atau bola, mengikat reseptor sel inang.</p>
+      <p><strong>5. DNA Genome (Genom DNA):</strong> Materi genetik virus berupa DNA untai ganda linear, dilindungi protein inti.</p>
+      <figure>
+        <img src="36a058201054a57da5bf89f43bb445be.jpg" alt="Diagram struktur adenovirus">
+        <figcaption>Gambar 2. Diagram struktur adenovirus.</figcaption>
+      </figure>
+    </article>
+
+    <!-- Struktur dan Karakteristik Virus -->
+    <article class="materi-item">
+      <h3>Struktur dan Karakteristik Virus</h3>
+      <p><strong>1. Jenis Virus:</strong> Adenovirus adalah virus DNA untai ganda (double-stranded DNA/dsDNA) yang tidak beramplop (non-enveloped).</p>
+      <p><strong>2. Ukuran dan Bentuk:</strong> Berukuran sedang, sekitar 70 hingga 100 nm, dan memiliki kapsid protein berbentuk ikosahedral (dua puluh sisi).</p>
+      <p><strong>3. Stabilitas:</strong> Adenovirus dikenal sangat stabil terhadap agen kimia atau fisik, serta kondisi pH yang merugikan. Karakteristik ini memungkinkan virus bertahan lama di luar tubuh inang dan di air.</p>
+      <p><strong>4. Serotipe:</strong> Terdapat lebih dari 100 serotipe (jenis yang berbeda secara imunologis) dari adenovirus, dengan sekitar 49 hingga 50 jenis di antaranya diketahui dapat menginfeksi manusia. Serotipe yang berbeda dapat menyebabkan penyakit pada bagian tubuh yang berbeda..</p>
+      <figure>
+        <img src="4a0119a066c6e48e1fe094ec4420e6d6.jpg" alt="Struktur Virus Adenovirus">
+        <figcaption>Gambar 3. Struktur dan karakteristik Adenovirus.</figcaption>
+      </figure>
+    </article>
+
+    <!-- Penularan Adenovirus -->
+    <article class="materi-item">
+      <h3>Penularan Adenovirus</h3>
+      <p><strong>1. Kontak Langsung:</strong> Menyentuh orang terinfeksi atau sekresi mereka.</p>
+      <p><strong>2. Droplet Pernapasan:</strong> Menghirup percikan air liur saat batuk/bersin/orang berbicara.</p>
+      <p><strong>3. Fekal-Oral:</strong> Menyebar melalui tinja, misal saat mengganti popok.</p>
+      <p><strong>4. Permukaan Terkontaminasi:</strong> Menyentuh benda/permukaan terkontaminasi, lalu mata/hidung/mulut.</p>
+      <p><strong>5. Air (Jarang):</strong> Terkadang melalui air tidak diklorinasi cukup.</p>
+    </article>
+
+    <!-- Manifestasi Klinis -->
+    <article class="materi-item">
+      <h3>Manifestasi Klinis (Penyakit Yang Ditimbulkan)</h3>
+      <p>Gejala infeksi adenovirus bervariasi tergantung pada serotipe virus dan organ tubuh mana yang terinfeksi. Infeksi biasanya terjadi 2 hingga 14 hari setelah paparan.</p>
+      <p><strong>1. Saluran Pernapasan (Paling umum) : </strong> Flu biasa, Faringitis (radang tenggorokan), Bronkitis, Pneumonia (radang paru-paru), Croup, Penyakit Pernapasan Akut (sering terjadi pada rekrutan militer).Demam, batuk, pilek, hidung tersumbat, sakit tenggorokan, nyeri otot, sakit kepala, sesak napas. </p>
+      <p><strong>2. Mata:</strong> Konjungtivitis folikular akut (mata merah), Keratokonjungtivitis epidemik (infeksi mata yang sangat menular, sering menyebabkan kerusakan kornea). Mata merah, berair, gatal, sensitif terhadap cahaya. </p>
+      <p><strong>3. Saluran Pencernaan:</strong> Gastroenteritis (radang lambung dan usus) seperti mual, muntah, kram perut, diare berair (terkadang parah). </p>
+      <p><strong>4. Saluran Kemih:</strong> Sistitis Hemoragik (radang kandung kemih dengan hematuria/kencing berdarah). Nyeri saat buang air kecil, sering buang air kecil, kencing berdarah. </p>
+      <p><strong>5. Lainnya:</strong> Hepatitis (terutama pada kasus hepatitis akut misterius pada anak-anak), Meningitis atau Ensefalitis (jarang, menyerang sistem saraf pusat), Penyakit pada hati, dan Infeksi yang menyebar (diseminata) pada pasien yang mengalami gangguan kekebalan.Gejala bervariasi sesuai organ yang diserang.</p>
+    </article>
+
+    <!-- Kelompok Berisiko Tinggi -->
+    <article class="materi-item">
+      <h3>Kelompok Berisiko Tinggi</h3>
+      <p><strong>1.</strong> Anak-anak di bawah usia 5 tahun, sering terjadi di tempat penitipan anak.</p>
+      <p><strong>2.</strong> Orang yang tinggal di lingkungan tertutup atau padat, seperti rekrutan militer atau mahasiswa.</p>
+      <p><strong>3.</strong> Individu dengan sistem kekebalan tubuh yang lemah (imunokompromais), seperti pasien transplantasi, penderita HIV, atau orang yang mengonsumsi obat imunosupresif. Kelompok ini berisiko tinggi mengalami penyakit parah dan komplikasi fatal.</p>
+    </article>
+
+    <!-- Pengobatan dan Pencegahan -->
+    <article class="materi-item">
+      <h3>Pengobatan dan Pencegahan</h3>
+      <h4>Pengobatan:</h4>
+      <p><strong>1.</strong> Tidak ada obat antivirus spesifik yang disetujui untuk pengobatan infeksi adenovirus.</p>
+      <p><strong>2.</strong> Sebagian besar infeksi bersifat ringan dan dapat sembuh sendiri (self-limiting) dengan perawatan suportif.</p>
+      <p><strong>3.</strong> Perawatan suportif meliputi: istirahat yang cukup, menjaga asupan cairan, dan penggunaan obat pereda nyeri atau penurun demam (paracetamol/ibuprofen).</p>
+      <p><strong>4.</strong> Pada kasus parah, terutama pada pasien imunokompromais, rawat inap mungkin diperlukan.</p>
+      <h4>Pencegahan:</h4>
+      <p><strong>1.</strong> Mencuci tangan secara teratur dengan sabun dan air mengalir, terutama setelah mengganti popok atau kontak dengan orang sakit.</p>
+      <p><strong>2.</strong> Hindari kontak dekat orang sakit.</p>
+      <p><strong>3.</strong> Menutup mulut saat batuk atau bersin, dan membuang tisu bekas.</p>
+      <p><strong>4.</strong> Bersihkan/disinfeksi permukaan sering disentuh.</p>
+      <p><strong>5.</strong> Vaksin tersedia untuk serotipe tertentu (tipe 4 dan 7) dan saat ini hanya digunakan untuk personel militer di Amerika Serikat.</p>
+    </article>
+  </section>
+
+  <!-- Kesimpulan -->
+  <section id="kesimpulan">
+    <h2>Kesimpulan</h2>
+    <p>Adenovirus merupakan virus DNA kompleks dengan struktur khas dan berbagai fungsi protein penyusunnya. Pemahaman penting untuk pengembangan vaksin dan terapi medis.</p>
+  </section>
+
+  <footer>
     <p>© 2025 | Dibantu oleh ChatGPT</p>
   </footer>
 
@@ -322,4 +586,4 @@ body.dark-mode footer {
   window.addEventListener('load', checkVisibility);
 </script>
 </body>
-</html>
+  </html>
